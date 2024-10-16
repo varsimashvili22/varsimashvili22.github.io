@@ -1,0 +1,21 @@
+﻿@page
+@model SocialMediaDashboard.Pages.DashboardModel
+@{
+    ViewData["Title"] = "Social Media Dashboard";
+}
+
+<h2>Latest Tweets from @Model.Username</h2>
+
+@if (Model.Tweets != null && Model.Tweets.Any())
+{
+    <ul>
+        @foreach (var tweet in Model.Tweets)
+        {
+            <li>@tweet.Text</li> 
+        }
+    </ul>
+}
+else
+{
+    <p>No tweets found.</p>
+}
